@@ -92,17 +92,16 @@ void main() {
   ctrl.close(); // 컨트롤러 닫음
   //final StreamSubscription subscription2 = ctrl.stream.listen((data) => print(data)); // 에러발생!asd
   //ctrl.add(950); // 위에서 컨트롤러가 닫혔기에 출력되지 않음.*/
-  /* 5 확인필요함
+  /* 5 확인필요함*/
   var numStream = createStream([1, 3, 5, 7, 9]); // 스트림을 만든다.
   numStream.listen((int number) => print(number)); // 스트림으로부터 데이터를 받아서 출력을 한다.
-  */
 }
-/* 8
-Stream<int> createStream(List<int> numbers) async* {// yield를 사용한다.
+
+Stream<int> createStream(List<int> numbers) async* {
+  // yield를 사용한다.
   // async*
   //int a = 1;
   for (var number in numbers) {
     yield number; // yield  return과같지만 반환후 열린채로 계속기다림 Stream과 똑같이 작동함
   }
 }
-*/
